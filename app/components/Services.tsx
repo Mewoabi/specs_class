@@ -3,6 +3,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaGraduationCap, FaBookOpen, FaUsers } from 'react-icons/fa';
+import { DecorativeDots, DecorativeX, GeometricShapes, WavyLines, FloatingShapes, DiagonalStripes } from './DecorativeElements';
 
 const services = [
   {
@@ -29,8 +30,13 @@ export default function Services() {
   });
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-light-grey relative overflow-hidden">
+      <DecorativeDots />
+      <GeometricShapes />
+      <WavyLines />
+      <FloatingShapes />
+      <DiagonalStripes />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -38,11 +44,11 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            What You'll Get
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-4 text-shadow-bold">
+            WHAT YOU'LL <span className="text-box-red text-4xl md:text-5xl lg:text-6xl">GET</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A complete 3-in-1 package designed to take you from zero to monetized YouTube success
+          <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto font-semibold">
+            A complete <span className="text-box-black-small">3-in-1</span> package designed to take you from zero to monetized YouTube success
           </p>
         </motion.div>
 
@@ -61,8 +67,8 @@ export default function Services() {
                 </div> */}
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-2">
-                    <FaCheckCircle className="text-green-500 text-3xl" />
-                    <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
+                    <FaCheckCircle className="text-red-600 text-3xl" />
+                    <h3 className="text-2xl md:text-3xl font-black text-gray-900">{service.title}</h3>
                   </div>
                 </div>
               </div>

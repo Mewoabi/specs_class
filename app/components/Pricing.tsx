@@ -3,6 +3,7 @@
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { FaCheck, FaWhatsapp, FaTelegram, FaExclamationTriangle } from 'react-icons/fa';
+import { DecorativeCircles, DecorativeX, GeometricShapes, CornerDecorations, FloatingShapes } from './DecorativeElements';
 
 const perks = [
   'The 15 Modules to 6 Figures',
@@ -19,8 +20,12 @@ export default function Pricing() {
   });
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-4xl mx-auto">
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <DecorativeCircles />
+      <GeometricShapes />
+      <CornerDecorations />
+      <FloatingShapes />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -28,10 +33,13 @@ export default function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Get The Password to YouTube Automation
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-4 text-shadow-bold">
+            GET THE <span className="text-box-black text-4xl md:text-5xl lg:text-6xl">PASSWORD</span>
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+            TO YOUTUBE AUTOMATION
+          </p>
+          <p className="text-lg md:text-xl text-gray-600 italic">
             Limited time offer - Price going up soon!
           </p>
         </motion.div>
@@ -44,9 +52,24 @@ export default function Pricing() {
         >
           {/* Discount Badge - Mobile: centered above pricing, Desktop: top-right */}
           <div className="relative md:absolute top-0 md:top-6 right-0 md:right-6 flex justify-center md:block mb-4 md:mb-0">
-            <div className="bg-red-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg inline-block">
+            <div className="bg-red-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg inline-block border-2 border-white">
               75% OFF
             </div>
+          </div>
+          
+          {/* Decorative X symbols - Multiple positions and sizes */}
+          <div className="absolute bottom-4 left-4 opacity-10 hidden lg:flex gap-2">
+            <DecorativeX size="lg" />
+            <DecorativeX size="lg" />
+            <DecorativeX size="lg" />
+            <DecorativeX size="lg" />
+          </div>
+          <div className="absolute top-1/2 left-8 opacity-8 hidden lg:flex flex-col gap-1">
+            <DecorativeX size="sm" />
+            <DecorativeX size="sm" />
+          </div>
+          <div className="absolute top-1/4 right-8 opacity-8 hidden lg:block">
+            <DecorativeX size="base" />
           </div>
 
           {/* Pricing */}
@@ -67,6 +90,12 @@ export default function Pricing() {
               <FaExclamationTriangle />
               <span>Price going up soon - act now!</span>
             </p>
+            {/* Date badge */}
+            <div className="mt-4 flex justify-center">
+              <div className="text-box-black text-sm md:text-base">
+                21st-30th DEC 2025
+              </div>
+            </div>
           </div>
 
           {/* Perks List */}
@@ -82,8 +111,8 @@ export default function Pricing() {
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="flex items-center space-x-3 bg-white/60 backdrop-blur-sm rounded-lg p-4"
               >
-                <FaCheck className="text-green-500 text-xl flex-shrink-0" />
-                <span className="text-lg text-gray-800 font-medium">{perk}</span>
+                <FaCheck className="text-red-600 text-xl flex-shrink-0" />
+                <span className="text-lg text-gray-800 font-semibold">{perk}</span>
               </motion.div>
             ))}
           </div>
@@ -97,7 +126,7 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8 }}
-              className="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 px-8 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center space-x-3 w-full bg-black text-white py-4 px-8 rounded-full font-black text-lg hover:bg-gray-900 hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-red-600"
             >
               <FaWhatsapp size={24} />
               <span>Pay Now via WhatsApp</span>

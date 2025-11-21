@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaTimes, FaArrowDown } from 'react-icons/fa';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
+import { DecorativeCircles, DecorativeDots, RedSemiCircle, DecorativeX, GeometricShapes, WavyLines, CornerDecorations, FloatingShapes, DiagonalStripes } from './DecorativeElements';
 
 const heroImages = [
   '/images/PN5a3888.jpg',
@@ -37,38 +38,58 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {/* Decorative Background Elements */}
+      <DecorativeCircles />
+      <DecorativeDots />
+      <GeometricShapes />
+      <WavyLines />
+      <CornerDecorations />
+      <FloatingShapes />
+      <DiagonalStripes />
+      
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-center">
           {/* Text Section - Left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-4 text-center lg:text-left"
+            className="space-y-1.5 text-center lg:text-left relative flex flex-col justify-center"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tighter">
-              <span className="block text-gray-900">PASSWORD TO</span>
-              <span className="block bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
+            {/* Decorative X symbols - Multiple sizes */}
+            <div className="absolute -top-4 -left-4 opacity-20 hidden lg:flex gap-2">
+              <DecorativeX size="xl" />
+              <DecorativeX size="lg" />
+            </div>
+            <div className="absolute top-20 right-4 opacity-15 hidden lg:flex gap-1">
+              <DecorativeX size="sm" />
+              <DecorativeX size="sm" />
+              <DecorativeX size="sm" />
+            </div>
+            
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+              <span className="block text-gray-900 mb-1 text-shadow-bold">PASSWORD TO</span>
+              <span className="block bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent font-black">
                 YOUTUBE AUTOMATION
               </span>
             </h1>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 leading-normal">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-gray-800 leading-tight mt-1.5 text-shadow-bold">
               UNLOCK THE SECRETS TO MAKING 6 FIGURES
             </h2>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Are you interested in Growing & Monetizing a YouTube channel without Showing your face or using your voice?
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-snug max-w-2xl mx-auto lg:mx-0 mt-1.5">
+              Learn how to grow & Monetize a Faceless YouTube channel Before 2026
             </p>
 
             {/* CTA Button to Pricing */}
-            <div className="pt-4">
+            <div className="pt-2.5 mt-1.5">
               <motion.button
                 onClick={scrollToPricing}
-                className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center space-x-2 mx-auto lg:mx-0"
+                className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-7 py-3 rounded-full font-bold text-base md:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center space-x-2 mx-auto lg:mx-0"
               >
                 <span>Get Started Now</span>
-                <FaArrowDown className="group-hover:translate-y-1 transition-transform" />
+                <FaArrowDown className="group-hover:translate-y-1 transition-transform text-xs md:text-sm" />
               </motion.button>
             </div>
           </motion.div>
@@ -80,6 +101,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl"
           >
+            {/* Red semi-circle decorative element */}
+            <RedSemiCircle position="right" />
             {/* Image Carousel */}
             <div className="embla overflow-hidden h-full w-full rounded-2xl" ref={emblaRef}>
               <div className="embla__container flex h-full">
@@ -140,15 +163,15 @@ export default function Hero() {
 
               {/* Video Player */}
               <div className="relative w-full" style={{ maxHeight: '90vh' }}>
-                <video
-                  className="w-full h-full object-contain"
-                  controls
-                  autoPlay
-                  style={{ maxHeight: '90vh' }}
-                  src="/video/WhatsApp Video 2025-11-20 at 18.57.23_97be6280.mp4"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                <div className="relative w-full" style={{ aspectRatio: '16/9', maxHeight: '90vh' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/yKYwmzejut8?autoplay=1&mute=0"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>

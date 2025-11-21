@@ -19,6 +19,7 @@ import {
   FaBalanceScale, 
   FaWrench 
 } from 'react-icons/fa';
+import { DecorativeDots, GeometricShapes, CornerDecorations, GridPattern, FloatingShapes } from './DecorativeElements';
 
 const modules = [
   { number: 1, title: 'Getting Started with YouTube', icon: FaRocket },
@@ -55,8 +56,13 @@ export default function CourseOutline() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-light-grey relative overflow-hidden">
+      <DecorativeDots />
+      <GeometricShapes />
+      <CornerDecorations />
+      <GridPattern />
+      <FloatingShapes />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -64,11 +70,11 @@ export default function CourseOutline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Complete Course Outline
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-4 text-shadow-bold">
+            COMPLETE <span className="text-box-black text-4xl md:text-5xl lg:text-6xl">COURSE</span> OUTLINE
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            15 comprehensive modules covering everything you need to know from the basics to monetization. 
+          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 font-semibold">
+            <span className="text-box-red text-lg md:text-xl">15</span> comprehensive modules covering everything you need to know from the basics to monetization. 
             Each module is packed with examples, case studies, tutorials, and assignments.
           </p>
           {/* <motion.button
@@ -109,10 +115,10 @@ export default function CourseOutline() {
           className="mt-12 text-center"
         >
           <div className="blurred-gradient-red rounded-2xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Plus Bonus Content!
+            <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-shadow-bold">
+              PLUS <span className="text-box-red text-2xl md:text-3xl">BONUS</span> CONTENT!
             </h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
               Get additional resources including AI tools guide, demonetization prevention strategies, 
               AdSense and taxes information, YouTube Shorts monetization, stress management tips, 
               and exclusive niche-specific knowledge.
