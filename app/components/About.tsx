@@ -47,7 +47,7 @@ export default function About() {
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   Meet Your Mentor
                 </h2>
-                <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent mb-4">
                   Formin Spectacular
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -77,7 +77,7 @@ export default function About() {
                     className="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg"
                   >
                     <div className="flex justify-center mb-2">
-                      <achievement.icon className="text-4xl text-blue-600" />
+                      <achievement.icon className="text-4xl text-red-600" />
                     </div>
                     <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                       {achievement.value}

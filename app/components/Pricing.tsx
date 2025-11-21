@@ -103,18 +103,18 @@ export default function Pricing() {
               <span>Pay Now via WhatsApp</span>
             </motion.a>
 
-            <motion.a
+            {/* <motion.a
               href="https://t.me/+YG3HUEJ9KvkyMWFk"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.9 }}
-              className="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 px-8 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <FaTelegram size={24} />
               <span>Pay Now via Telegram</span>
-            </motion.a>
+            </motion.a> */}
           </div>
         </motion.div>
       </div>

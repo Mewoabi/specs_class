@@ -83,9 +83,9 @@ export default function FAQ() {
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <FaChevronUp className="text-blue-600 flex-shrink-0" />
+                  <FaChevronUp className="text-red-600 flex-shrink-0" />
                 ) : (
-                  <FaChevronDown className="text-blue-600 flex-shrink-0" />
+                  <FaChevronDown className="text-red-600 flex-shrink-0" />
                 )}
               </button>
               {openIndex === index && (

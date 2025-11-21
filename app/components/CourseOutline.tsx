@@ -71,13 +71,13 @@ export default function CourseOutline() {
             15 comprehensive modules covering everything you need to know from the basics to monetization. 
             Each module is packed with examples, case studies, tutorials, and assignments.
           </p>
-          <motion.button
+          {/* <motion.button
             onClick={handleDownload}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             <FaDownload />
             <span>Download Full Course Outline</span>
-          </motion.button>
+          </motion.button> */}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -90,9 +90,9 @@ export default function CourseOutline() {
               className="blurred-gradient rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex justify-center mb-4">
-                <module.icon className="text-5xl text-blue-600" />
+                <module.icon className="text-5xl text-red-600" />
               </div>
-              <div className="text-sm font-semibold text-blue-600 mb-2">
+              <div className="text-sm font-semibold text-red-600 mb-2">
                 Module {module.number}
               </div>
               <h3 className="text-lg font-bold text-gray-900 leading-tight">

@@ -22,11 +22,20 @@ export const metadata: Metadata = {
     description: "Unlock the secrets to making 6 figures on YouTube. Learn faceless YouTube automation and monetization strategies.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/PN5a3888.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Password to YouTube Automation - Masterclass by Atem Formin",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Password to YouTube Automation | Masterclass by Formin Spectacular",
     description: "Unlock the secrets to making 6 figures on YouTube. Learn faceless YouTube automation and monetization strategies.",
+    images: ["/images/PN5a3888.jpg"],
   },
   robots: {
     index: true,
