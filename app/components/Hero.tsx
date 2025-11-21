@@ -37,7 +37,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-white">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16 md:pt-20">
       {/* Decorative Background Elements */}
       <DecorativeCircles />
       <DecorativeDots />
