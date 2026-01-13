@@ -1,10 +1,7 @@
-services:
-  - type: web
-    name: youtube-masterclass
-    env: docker
-    dockerfilePath: ./Dockerfile
-    dockerContext: .
-    plan: starter
+static_sites:
+  - name: youtube-masterclass
+    buildCommand: cd my-app && pnpm install && pnpm run build
+    publishPath: my-app/out
     envVars:
       - key: NODE_ENV
         value: production

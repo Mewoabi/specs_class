@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { DecorativeCircles, GeometricShapes, CornerDecorations, DecorativeX } from './DecorativeElements';
 
 const faqs = [
   {
@@ -48,8 +49,11 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
+    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-light-grey relative overflow-hidden">
+      <DecorativeCircles />
+      <GeometricShapes />
+      <CornerDecorations />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -57,11 +61,11 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-4 text-shadow-bold">
+            FREQUENTLY <span className="text-box-black text-4xl md:text-5xl lg:text-6xl">ASKED</span> QUESTIONS
           </h2>
-          <p className="text-xl text-gray-600">
-            Everything you need to know about the masterclass
+          <p className="text-xl md:text-2xl text-gray-700 font-semibold">
+            Everything you need to know about the <span className="text-box-red text-lg md:text-xl">masterclass</span>
           </p>
         </motion.div>
 
@@ -79,13 +83,13 @@ export default function FAQ() {
                 className="w-full text-left p-6 flex items-center justify-between hover:bg-white/20 transition-colors"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-lg font-semibold text-gray-900 pr-4">
+                <span className="text-lg md:text-xl font-black text-gray-900 pr-4">
                   {faq.question}
                 </span>
                 {openIndex === index ? (
-                  <FaChevronUp className="text-blue-600 flex-shrink-0" />
+                  <FaChevronUp className="text-red-600 flex-shrink-0" />
                 ) : (
-                  <FaChevronDown className="text-blue-600 flex-shrink-0" />
+                  <FaChevronDown className="text-red-600 flex-shrink-0" />
                 )}
               </button>
               {openIndex === index && (

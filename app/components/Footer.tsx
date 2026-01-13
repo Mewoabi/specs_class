@@ -1,13 +1,24 @@
-import { FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import { FaWhatsapp, FaTelegram, FaPhone } from 'react-icons/fa';
+import { DecorativeX, CornerDecorations } from './DecorativeElements';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black text-white py-12 relative overflow-hidden">
+      <CornerDecorations />
+      {/* Decorative X symbols */}
+      <div className="absolute top-8 left-8 opacity-10 hidden lg:flex gap-2">
+        <DecorativeX size="sm" className="text-white" />
+        <DecorativeX size="sm" className="text-white" />
+        <DecorativeX size="sm" className="text-white" />
+      </div>
+      <div className="absolute bottom-8 right-8 opacity-10 hidden lg:block">
+        <DecorativeX size="base" className="text-white" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
               Password to YouTube Automation
             </h3>
             <p className="text-gray-400">
@@ -45,27 +56,38 @@ export default function Footer() {
           {/* Social Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://wa.me/237683406758"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <FaWhatsapp size={24} />
-                <span>WhatsApp</span>
-              </a>
-              <a
-                href="https://t.me/+YG3HUEJ9KvkyMWFk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="Telegram"
-              >
-                <FaTelegram size={24} />
-                <span>Telegram</span>
-              </a>
+            <div className="space-y-3">
+              <div className="flex space-x-4">
+                <a
+                  href="https://wa.me/237683406758"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-400 hover:text-green-400 transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <FaWhatsapp size={24} />
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://t.me/+YG3HUEJ9KvkyMWFk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-400 hover:text-red-400 transition-colors"
+                  aria-label="Telegram"
+                >
+                  <FaTelegram size={24} />
+                  <span>Telegram</span>
+                </a>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-400">
+                <FaPhone size={20} />
+                <a
+                  href="tel:+237683406758"
+                  className="hover:text-white transition-colors"
+                >
+                  +237 683 406 758
+                </a>
+              </div>
             </div>
           </div>
         </div>

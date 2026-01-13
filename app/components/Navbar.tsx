@@ -29,7 +29,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,8 +39,8 @@ export default function Navbar() {
             className="text-xl md:text-2xl font-bold text-black cursor-pointer"
             onClick={() => scrollToSection('home')}
           >
-            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Password to YouTube
+            <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+              Formin Spectacular
             </span>
           </div>
 
@@ -48,25 +48,25 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-red-600 transition-colors font-medium"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('mentor')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-red-600 transition-colors font-medium"
             >
               Mentor
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-red-600 transition-colors font-medium"
             >
               Pricing
             </button>
             <button
               onClick={() => scrollToSection('faq')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-red-600 transition-colors font-medium"
             >
               FAQ
             </button>
@@ -99,25 +99,25 @@ export default function Navbar() {
             <div className="px-4 py-4 space-y-4">
               <button
                 onClick={() => scrollToSection('home')}
-                className="block w-full text-left text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors font-medium py-2"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection('mentor')}
-                className="block w-full text-left text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors font-medium py-2"
               >
                 Mentor
               </button>
               <button
                 onClick={() => scrollToSection('pricing')}
-                className="block w-full text-left text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors font-medium py-2"
               >
                 Pricing
               </button>
               <button
                 onClick={() => scrollToSection('faq')}
-                className="block w-full text-left text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
+                className="block w-full text-left text-gray-700 hover:text-red-600 transition-colors font-medium py-2"
               >
                 FAQ
               </button>

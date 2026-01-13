@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaUsers, FaEye, FaDollarSign } from 'react-icons/fa';
+import { RedSemiCircle, DecorativeX, GeometricShapes, CornerDecorations, GridPattern, FloatingShapes } from './DecorativeElements';
 
 export default function About() {
   const [ref, inView] = useInView({
@@ -18,16 +19,36 @@ export default function About() {
   ];
 
   return (
-    <section id="mentor" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="mentor" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-light-grey">
+      <RedSemiCircle position="left" />
+      <GeometricShapes />
+      <CornerDecorations />
+      <GridPattern />
+      <FloatingShapes />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="blurred-gradient rounded-3xl p-8 md:p-12 lg:p-16"
+          className="blurred-gradient rounded-3xl p-8 md:p-12 lg:p-16 relative border-black-thick"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Decorative X symbols */}
+          <div className="absolute top-4 right-4 opacity-10 hidden lg:flex gap-1">
+            <DecorativeX size="sm" />
+            <DecorativeX size="sm" />
+            <DecorativeX size="sm" />
+          </div>
+          <div className="absolute bottom-4 left-4 opacity-10 hidden lg:block">
+            <DecorativeX size="base" />
+          </div>
+
+          {/* Full-width heading */}
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 text-shadow-bold text-center">
+            MEET YOUR <span className="text-box-black text-4xl md:text-5xl lg:text-6xl">MENTOR</span>
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Author Image */}
             <div className="relative">
               <div className="relative aspect-square max-w-md mx-auto">
@@ -44,26 +65,30 @@ export default function About() {
             {/* Author Info */}
             <div className="space-y-6 text-center lg:text-left">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                  Meet Your Mentor
-                </h2>
-                <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-4">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-black bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent mb-4">
                   Formin Spectacular
                 </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                {/* <p className="text-lg text-gray-700 leading-relaxed">
                   (Atem Formin)
-                </p>
+                </p> */}
               </div>
-
+              <div className="mb-4">
+                <span className="text-box-black-large text-2xl md:text-3xl lg:text-4xl font-black italic">
+                  ATEM FORMIN
+                </span>
+              </div>
               <p className="text-lg text-gray-700 leading-relaxed">
-                With over a decade of experience in content creation, Formin Spectacular has mastered the art of 
-                faceless YouTube automation. As a successful content creator and comedian, he has built multiple 
-                monetized channels and mentored over 100+ students to YouTube monetization success.
+                My story is simple. From a young age, I've always loved content creation. I can remember going to cyber cafes just to learn video editing. I started shooting comedy skits back in 2017, but that's a story for another day.
+
+                I remember when my friends and I shared a single room—without a kitchen or toilet. A lot of people discouraged us, and we faced many challenges along the way. But everything changed when I made my first $5,000 on YouTube in December 2021.
+
+
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed">
-                His unique approach combines proven strategies, real-world case studies, and hands-on mentorship 
-                to help creators achieve 6-figure incomes without ever showing their face or using their voice.
+                Fast forward to today: I've won multiple YouTube Awards, earned hundreds of thousands of dollars, helped over 100 people get monetized on YouTube, spoken at multiple conferences, and so much more.
+
+                It took me years to get monetized, probably because I never had a mentor. My hope is that I can now be the bridge between you and your YouTube monetization success.
               </p>
 
               {/* Achievements */}
@@ -77,7 +102,7 @@ export default function About() {
                     className="bg-white/60 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg"
                   >
                     <div className="flex justify-center mb-2">
-                      <achievement.icon className="text-4xl text-blue-600" />
+                      <achievement.icon className="text-4xl text-red-600" />
                     </div>
                     <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                       {achievement.value}

@@ -19,6 +19,7 @@ import {
   FaBalanceScale, 
   FaWrench 
 } from 'react-icons/fa';
+import { DecorativeDots, GeometricShapes, CornerDecorations, GridPattern, FloatingShapes } from './DecorativeElements';
 
 const modules = [
   { number: 1, title: 'Getting Started with YouTube', icon: FaRocket },
@@ -55,8 +56,13 @@ export default function CourseOutline() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-light-grey relative overflow-hidden">
+      <DecorativeDots />
+      <GeometricShapes />
+      <CornerDecorations />
+      <GridPattern />
+      <FloatingShapes />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -64,20 +70,20 @@ export default function CourseOutline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Complete Course Outline
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-4 text-shadow-bold">
+            COMPLETE <span className="text-box-black text-4xl md:text-5xl lg:text-6xl">COURSE</span> OUTLINE
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            15 comprehensive modules covering everything you need to know from the basics to monetization. 
+          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8 font-semibold">
+            <span className="text-box-red text-lg md:text-xl">15</span> comprehensive modules covering everything you need to know from the basics to monetization. 
             Each module is packed with examples, case studies, tutorials, and assignments.
           </p>
-          <motion.button
+          {/* <motion.button
             onClick={handleDownload}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             <FaDownload />
             <span>Download Full Course Outline</span>
-          </motion.button>
+          </motion.button> */}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -90,9 +96,9 @@ export default function CourseOutline() {
               className="blurred-gradient rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex justify-center mb-4">
-                <module.icon className="text-5xl text-blue-600" />
+                <module.icon className="text-5xl text-red-600" />
               </div>
-              <div className="text-sm font-semibold text-blue-600 mb-2">
+              <div className="text-sm font-semibold text-red-600 mb-2">
                 Module {module.number}
               </div>
               <h3 className="text-lg font-bold text-gray-900 leading-tight">
@@ -109,10 +115,10 @@ export default function CourseOutline() {
           className="mt-12 text-center"
         >
           <div className="blurred-gradient-red rounded-2xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Plus Bonus Content!
+            <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-shadow-bold">
+              PLUS <span className="text-box-red text-2xl md:text-3xl">BONUS</span> CONTENT!
             </h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
               Get additional resources including AI tools guide, demonetization prevention strategies, 
               AdSense and taxes information, YouTube Shorts monetization, stress management tips, 
               and exclusive niche-specific knowledge.
